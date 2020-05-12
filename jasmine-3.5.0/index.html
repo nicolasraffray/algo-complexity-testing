@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Speed</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <!-- include source files here... -->
+  <script src="src/timeing.js"></script>  
+</head>
+
+<body>
+  <canvas id="myChart" width="100%" height="50px"></canvas>
+</body>
+
+<script>
+  var ctx = document.getElementById('myChart').getContext('2d');
+  let Time = new Timing(shuffle)
+  let TimeReverse = new Timing(reverse)
+
+  Time.iterateFunction(100,10000)
+  var inputs = []
+  let times = []
+  Time.times.forEach((iteration) => {
+    inputs.push(iteration.input)
+  })
+
+  Time.times.forEach((iteration) => {
+    times.push(iteration.time)
+  })
+
+  TimeReverse.iterateFunction(100,10000)
+  let reverseTimes = []
+  TimeReverse.times.forEach((iteration) => {
+    reverseTimes.push(iteration.time)
+  })
+
+  var myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+        labels: inputs,
+        datasets: [{
+            label: 'Sort Time',
+            data: times,
+            fill: false,
+            backgroundColor: "#fbbd08",
+            borderColor: "#fbbd08",
+            borderWidth: 2,
+            pointBackgroundColor: "#fbbd08",
+            pointBorderWidth: 0.5,
+            pointStyle: "rectRounded",
+            pointRadius: 4,
+            pointHitRadius: 5,
+            pointHoverRadius: 5,
+            hoverBackgroundColor: "#FFFFFF",
+        },
+        {
+          label: 'Reverse Time',
+          data: reverseTimes,
+          backgroundColor: "rgba(40, 167, 69, 0.4)",
+          fill: false,
+          borderColor: "#28a745",
+          borderWidth: 2,
+          pointBorderWidth: 0,
+          pointStyle: "rectRounded",
+          pointRadius: 4,
+            pointHitRadius: 5,
+            pointHoverRadius: 5,
+          pointBackgroundColor: "rgba(40, 167, 69, 0.4)",
+          hoverBackgroundColor: "#28a745",
+        }
+      ]
+    },
+    options: {
+      scales: {
+        xAxes: [
+          {
+            scaleLabel: {
+              display: true,
+              labelString: "Elements in Array",
+            },
+          },
+        ],
+        yAxes: [
+          {
+            scaleLabel: {
+              display: true,
+              labelString: "Milliseconds",
+            },
+          },
+        ],
+      },
+    },
+  });
+</script>
+</html>
