@@ -17,10 +17,12 @@
   let Time = new Timing(sort)
   let TimeReverse = new Timing(reverse)
   let TimeShuffle = new Timing(shuffle)
+  let TimeLast = new Timing(last)
 
   Time.iterateFunction(100,10000)
   TimeReverse.iterateFunction(100,10000)
   TimeShuffle.iterateFunction(100,10000)
+  TimeLast.iterateFunction(100,10000)
 
 
   var inputs = []
@@ -41,6 +43,11 @@
   let shuffleTimes = []
   TimeShuffle.times.forEach((iteration) => {
     shuffleTimes.push(iteration.time)
+  })
+
+  let lastTimes = []
+  TimeLast.times.forEach((iteration) => {
+    lastTimes.push(iteration.time)
   })
 
   var myChart = new Chart(ctx, {
@@ -92,7 +99,23 @@
           pointHitRadius: 5,
           pointHoverRadius: 5,
           hoverBackgroundColor: "#FFFFFF",
-        }
+        },
+        {
+          label: 'Last Time',
+          data: lastTimes,
+          fill: false,
+          backgroundColor: "rgba(24,162,184, 0.2)",
+          borderColor: "#18A2B8",
+          borderWidth: 2,
+          pointBackgroundColor: "#18A2B8",
+          pointBorderColor: "#000000",
+          pointBorderWidth: 0.5,
+          pointStyle: "rectRounded",
+          pointRadius: 4,
+          pointHitRadius: 5,
+          pointHoverRadius: 5,
+          hoverBackgroundColor: "#FFFFFF",
+        },
       ]
     },
     options: {
