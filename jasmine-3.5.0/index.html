@@ -14,10 +14,15 @@
 
 <script>
   var ctx = document.getElementById('myChart').getContext('2d');
-  let Time = new Timing(shuffle)
+  let Time = new Timing(sort)
   let TimeReverse = new Timing(reverse)
+  let TimeShuffle = new Timing(shuffle)
 
   Time.iterateFunction(100,10000)
+  TimeReverse.iterateFunction(100,10000)
+  TimeShuffle.iterateFunction(100,10000)
+
+
   var inputs = []
   let times = []
   Time.times.forEach((iteration) => {
@@ -28,10 +33,14 @@
     times.push(iteration.time)
   })
 
-  TimeReverse.iterateFunction(100,10000)
   let reverseTimes = []
   TimeReverse.times.forEach((iteration) => {
     reverseTimes.push(iteration.time)
+  })
+
+  let shuffleTimes = []
+  TimeShuffle.times.forEach((iteration) => {
+    shuffleTimes.push(iteration.time)
   })
 
   var myChart = new Chart(ctx, {
@@ -67,6 +76,22 @@
             pointHoverRadius: 5,
           pointBackgroundColor: "rgba(40, 167, 69, 0.4)",
           hoverBackgroundColor: "#28a745",
+        },
+        {
+          label: 'Shuffle Time',
+          data: shuffleTimes,
+          fill: false,
+          backgroundColor: "rgba(255,99,132,0.2)",
+          borderColor: "#dc3644",
+          borderWidth: 2,
+          pointBackgroundColor: "#dc3644",
+          pointBorderColor: "#000000",
+          pointBorderWidth: 0.5,
+          pointStyle: "rectRounded",
+          pointRadius: 4,
+          pointHitRadius: 5,
+          pointHoverRadius: 5,
+          hoverBackgroundColor: "#FFFFFF",
         }
       ]
     },
