@@ -5,32 +5,33 @@ class Timing {
     this.function = callback
   }
 
-  runFunction = (inputLength, input) => {
+  _runFunction = (inputLength, input) => {
     let start = performance.now()
     this.function(input)
     let end = performance.now()
-    this.setTime(inputLength, start, end)
+    this._setTime(inputLength, start, end)
   }
 
-  setTime = (iteration,start,end) => {
+  _setTime = (iteration,start,end) => {
     this.times.push({input: iteration, time: (end - start) })
   }
 
   iterateFunction = (step, endPoint) => {
     for(let i = 0; i <= endPoint; i += step){
       var input = [...Array(i).keys()]
-      input = this.shuffle(input)
-      this.runFunction(i, input)
+      input = this._shuffle(input)
+      this._runFunction(i, input)
     }
   }
 
-  shuffle = (array) => {
+  _shuffle = (array) => {
     if(this.function === sort){
       console.log("in the shuffle")
       for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1)); 
         [array[i], array[j]] = [array[j], array[i]];
-    }}
+      }
+    }
     return array
   }
 }
