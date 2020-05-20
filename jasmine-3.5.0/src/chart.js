@@ -2,13 +2,13 @@ class MakeChart {
   constructor(name) {
     this.chartName = name;
     this.functions = {
-      sort: new Sort(),
-      reverse: new Reverse(),
+      sort: new Sort(100, 10000),
+      reverse: new Reverse(100, 10000),
     };
   }
 
   _generateOptions = () => {
-    return (options = {
+    let options = {
       scales: {
         xAxes: [
           {
@@ -27,7 +27,8 @@ class MakeChart {
           },
         ],
       },
-    });
+    };
+    return options;
   };
 
   generate = () => {

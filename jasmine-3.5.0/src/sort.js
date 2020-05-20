@@ -1,6 +1,6 @@
 class Sort {
-  constructor(step, End, input) {
-    this.timing = new Timeing(_reverse);
+  constructor(step, End) {
+    this.timing = new Timing(this._sort);
     this.dataset = [];
     this.labels = [];
     this.step = step;
@@ -8,7 +8,7 @@ class Sort {
   }
 
   _sort = (input) => {
-    input.sort(input);
+    input.sort();
   };
 
   _generateData = () => {
@@ -20,8 +20,8 @@ class Sort {
   };
 
   _generateLabels = () => {
-    Time.times.forEach((iteration) => {
-      inputs.push(iteration.input);
+    this.timing.times.forEach((iteration) => {
+      this.labels.push(iteration.input);
     });
   };
 

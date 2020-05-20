@@ -1,13 +1,13 @@
 class Reverse {
   constructor(step, End) {
-    this.timing = new Timeing(_reverse);
+    this.timing = new Timing(this._reverse);
     this.dataset = [];
     this.labels = [];
     this.step = step;
     this.end = End;
   }
 
-  _sort = (input) => {
+  _reverse = (input) => {
     input.reverse();
   };
 
@@ -20,8 +20,8 @@ class Reverse {
   };
 
   _generateLabels = () => {
-    Time.times.forEach((iteration) => {
-      inputs.push(iteration.input);
+    this.timing.times.forEach((iteration) => {
+      this.labels.push(iteration.input);
     });
   };
 
