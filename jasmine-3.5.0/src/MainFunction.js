@@ -1,10 +1,10 @@
 class MainFunction {
-  constructor(step, end) {
+  constructor() {
     this.timing = [];
     this.dataset = [];
     this.labels = [];
-    this.step = step;
-    this.end = end;
+    this.step = 10000;
+    this.end = 100;
   }
 
   _generateData = () => {
