@@ -1,4 +1,4 @@
-class Shuffle extends MainFunction {
+class Shuffle extends GenerateData {
   constructor(step, end) {
     super(step, end);
     this.timing = new Timing(this.shuffle);

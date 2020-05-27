@@ -1,4 +1,4 @@
-class Sort extends MainFunction {
+class Sort extends GenerateData {
   constructor(step, end) {
     super(step, end);
     this.timing = new Timing(this._sort);

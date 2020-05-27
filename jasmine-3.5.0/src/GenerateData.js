@@ -1,4 +1,4 @@
-class MainFunction {
+class GenerateData {
   constructor() {
     this.timing = [];
     this.dataset = [];
