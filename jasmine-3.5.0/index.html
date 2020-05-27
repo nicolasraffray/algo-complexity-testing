@@ -7,20 +7,24 @@
     <!-- include source files here... -->
     <script src="src/timeing.js"></script>
     <script src="src/MainFunction.js"></script>
+    <script src="src/shuffle.js"></script>
     <script src="src/sort.js"></script>
     <script src="src/reverse.js"></script>
     <script src="src/chart.js"></script>
   </head>
 
   <body>
-    <canvas id="myChart" width="100%" height="50px"></canvas>
     <canvas id="sort" width="100%" height="50px"></canvas>
     <canvas id="reverse" width="100%" height="50px"></canvas>
+    <canvas id="shuffle" width="100%" height="50px"></canvas>
+    <canvas id="myChart" width="100%" height="50px"></canvas>
   </body>
 
   <script>
     var sortChart = new MakeChart("sort");
     var reverseChart = new MakeChart("reverse");
+    var shuffleChart = new MakeChart("shuffle");
+    shuffleChart.generate();
     sortChart.generate();
     reverseChart.generate();
     var ctx = document.getElementById("myChart").getContext("2d");

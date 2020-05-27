@@ -4,6 +4,7 @@ class MakeChart {
     this.functions = {
       sort: new Sort(100, 10000),
       reverse: new Reverse(100, 10000),
+      shuffle: new Shuffle(100, 10000),
     };
   }
 
@@ -14,7 +15,7 @@ class MakeChart {
           {
             scaleLabel: {
               display: true,
-              labelString: "Elements in Array",
+              labelString: "Number of Elements in Array",
             },
           },
         ],
