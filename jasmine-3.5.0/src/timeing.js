@@ -6,20 +6,15 @@ class Timing {
     this.dataStore = [];
   }
 
-  _runFunction = (inputLength, input, theFunction, dataStore) => {
-    let start = performance.now();
-    theFunction(input);
-    let end = performance.now();
-    this._setTime(inputLength, start, end, dataStore);
-  };
-
-  _setTime = (iteration, start, end, dataStore) => {
-    dataStore.push({ input: iteration, time: end - start });
-  };
-
   iterateFunction = (step, endPoint) => {
     if (typeof this.function === "function") {
-      this._loopFromStartToFinish(step, endPoint, this.function, this.times);
+      this._loopFromStartToFinish(
+        step,
+        endPoint,
+        this.function,
+        this.dataStore
+      );
+      this.times.push(this.dataStore);
     } else {
       for (let func in this.function) {
         this.dataStore = [];
@@ -32,7 +27,21 @@ class Timing {
         this.times.push(this.dataStore);
       }
     }
-    console.log(JSON.stringify(this.function), this.times);
+  };
+
+  getTimes = () => {
+    return this.times;
+  };
+
+  _runFunction = (inputLength, input, theFunction, dataStore) => {
+    let start = performance.now();
+    theFunction(input);
+    let end = performance.now();
+    this._setTime(inputLength, start, end, dataStore);
+  };
+
+  _setTime = (iteration, start, end, dataStore) => {
+    dataStore.push({ input: iteration, time: end - start });
   };
 
   _loopFromStartToFinish = (step, endPoint, theFunction, dataStore) => {

@@ -1,9 +1,6 @@
-class Reverse extends GenerateData {
-  constructor(step, end) {
-    super(step, end);
+class Reverse {
+  constructor() {
     this.timing = new Timing(this._reverse);
-    this.step = step;
-    this.end = end;
   }
 
   _reverse = (input) => {
