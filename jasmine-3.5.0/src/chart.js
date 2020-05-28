@@ -65,9 +65,7 @@ class MakeChart {
   generateDataSets = () => {
     let data = this.generateData();
     let datasets = [];
-    console.log(this.chartName, data);
     for (let val in data) {
-      console.log(this.chartName, data[val]);
       datasets.push({
         label: this.chartName,
         data: data[val],
