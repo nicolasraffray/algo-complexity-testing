@@ -67,7 +67,7 @@ class MakeChart {
     let datasets = [];
     for (let val in data) {
       datasets.push({
-        label: this.chartName,
+        label: this.functions[this.chartName].functionNames[val],
         data: data[val],
         fill: false,
         backgroundColor: "#fbbd08",

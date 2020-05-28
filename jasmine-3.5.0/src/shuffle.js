@@ -1,6 +1,7 @@
 class Shuffle {
   constructor() {
     this.timing = new Timing([this.theShuffle, this.jsShuffle]);
+    this.functionNames = ["Shuffle", "JavaScript Sort"];
   }
 
   jsShuffle = (array) => {
