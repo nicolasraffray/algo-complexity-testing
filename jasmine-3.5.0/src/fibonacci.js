@@ -1,6 +1,10 @@
 class Fibonnaci {
   constructor() {
-    this.timing = new Timing(this._reverse);
+    this.timing = new Timing(this.fibonnaci);
     this.functionNames = ["Fibonnaci"];
   }
+
+  fibonnaci = () => {
+    null;
+  };
 }

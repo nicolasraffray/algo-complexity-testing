@@ -16,6 +16,7 @@
     <canvas id="sort" width="100%" height="50px"></canvas>
     <canvas id="reverse" width="100%" height="50px"></canvas>
     <canvas id="shuffle" width="100%" height="50px"></canvas>
+    <canvas id="fibonnaci" width="100%" height="50px"></canvas>
     <canvas id="myChart" width="100%" height="50px"></canvas>
   </body>
 
@@ -23,8 +24,10 @@
     var sortChart = new MakeChart("sort", 100, 10000);
     var reverseChart = new MakeChart("reverse", 100, 10000);
     var shuffleChart = new MakeChart("shuffle", 100, 10000);
+    var fibonnaci = new MakeChart("fibbonaci");
     shuffleChart.generate();
     sortChart.generate();
     reverseChart.generate();
+    fibonnaci.generate();
   </script>
 </html>
