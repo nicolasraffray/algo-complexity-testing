@@ -7,6 +7,7 @@ class MakeChart {
       sort: new Sort(),
       reverse: new Reverse(),
       shuffle: new Shuffle(),
+      fibonnaci: new Fibonnaci(),
     };
   }
 
