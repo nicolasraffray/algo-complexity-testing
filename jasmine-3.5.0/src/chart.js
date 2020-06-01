@@ -65,15 +65,16 @@ class MakeChart {
   generateDataSets = () => {
     let data = this.generateData();
     let datasets = [];
+    let colours = ["#0e9aa7", "#fe8a71"];
     for (let val in data) {
       datasets.push({
         label: this.functions[this.chartName].functionNames[val],
         data: data[val],
         fill: false,
-        backgroundColor: "#fbbd08",
-        borderColor: "#fbbd08",
+        backgroundColor: colours[val],
+        borderColor: colours[val],
         borderWidth: 2,
-        pointBackgroundColor: "#fbbd08",
+        pointBackgroundColor: colours[val],
         pointBorderWidth: 0.5,
         pointStyle: "rectRounded",
         pointRadius: 4,
