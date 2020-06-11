@@ -1,9 +1,10 @@
 class Timing {
-  constructor(callback) {
+  constructor(callback, name = null) {
     this.startTime = 0;
     this.times = [];
     this.function = callback;
     this.dataStore = [];
+    this.name = name;
   }
 
   iterateFunction = (step, endPoint) => {
@@ -29,10 +30,6 @@ class Timing {
     }
   };
 
-  getTimes = () => {
-    return this.times;
-  };
-
   _runFunction = (inputLength, input, theFunction, dataStore) => {
     let start = performance.now();
     theFunction(input);
@@ -45,10 +42,18 @@ class Timing {
   };
 
   _loopFromStartToFinish = (step, endPoint, theFunction, dataStore) => {
-    for (let i = 0; i <= endPoint; i += step) {
-      var input = [...Array(i).keys()];
-      input = this._shuffle(input);
-      this._runFunction(i, input, theFunction, dataStore);
+    console.log(this.name);
+    if (this.name !== "fibonacci") {
+      for (let i = 0; i <= endPoint; i += step) {
+        var input = [...Array(i).keys()];
+        input = this._shuffle(input);
+        // console.log(this.function, input);
+        this._runFunction(i, input, theFunction, dataStore);
+      }
+    } else {
+      for (let i = 0; i <= endPoint; i += step) {
+        this._runFunction(i, i, theFunction, dataStore);
+      }
     }
   };
 

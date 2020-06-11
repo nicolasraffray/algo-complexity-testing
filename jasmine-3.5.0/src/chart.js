@@ -7,7 +7,7 @@ class MakeChart {
       sort: new Sort(),
       reverse: new Reverse(),
       shuffle: new Shuffle(),
-      fibonnaci: new Fibonnaci(),
+      fibonacci: new Fibonnaci(),
     };
   }
 
@@ -88,6 +88,7 @@ class MakeChart {
   };
 
   generate = () => {
+    console.log(this.chartName);
     var ctx = document.getElementById(this.chartName).getContext("2d");
     var myChart = new Chart(ctx, {
       type: "line",

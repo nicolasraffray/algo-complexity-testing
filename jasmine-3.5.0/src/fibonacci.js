@@ -1,20 +1,21 @@
 class Fibonnaci {
   constructor() {
-    this.timing = new Timing(this.fibonnaci);
-    this.functionNames = ["Fibonnaci"];
+    this.timing = new Timing(this.fibonnaci, "fibonacci");
+    this.functionNames = ["fibonacci"];
   }
 
   fibonnaci = (number) => {
-    let n = 0;
-    let f1 = 0;
-    let f2 = 1;
-    let fnth = 0;
-    let v = [];
+    // console.log(number);
+    var f1 = 0;
+    var f2 = 1;
+    var fnth = 0;
+    var v = [];
     while (fnth < number) {
       fnth = f1 + f2;
       v.push(fnth);
       f1 = f2;
       f2 = fnth;
+      console.log(fnth);
     }
   };
 }
