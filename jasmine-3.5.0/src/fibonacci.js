@@ -5,7 +5,6 @@ class Fibonnaci {
   }
 
   fibonnaci = (number) => {
-    // console.log(number);
     var f1 = 0;
     var f2 = 1;
     var fnth = 0;
@@ -15,7 +14,6 @@ class Fibonnaci {
       v.push(fnth);
       f1 = f2;
       f2 = fnth;
-      console.log(fnth);
     }
   };
 }

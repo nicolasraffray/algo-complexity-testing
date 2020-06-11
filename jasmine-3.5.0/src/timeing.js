@@ -42,12 +42,10 @@ class Timing {
   };
 
   _loopFromStartToFinish = (step, endPoint, theFunction, dataStore) => {
-    console.log(this.name);
     if (this.name !== "fibonacci") {
       for (let i = 0; i <= endPoint; i += step) {
         var input = [...Array(i).keys()];
         input = this._shuffle(input);
-        // console.log(this.function, input);
         this._runFunction(i, input, theFunction, dataStore);
       }
     } else {
@@ -59,7 +57,6 @@ class Timing {
 
   _shuffle = (array) => {
     if (this.function === sort) {
-      console.log("in the shuffle");
       for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
