@@ -1,7 +1,7 @@
 class Fibonnaci {
   constructor() {
-    this.timing = new Timing(this.fibonnaci, "fibonacci");
-    this.functionNames = ["fibonacci"];
+    this.timing = new Timing([this.fibonnaci, this.fib_recur], "fibonacci");
+    this.functionNames = ["fibonacci while loop", "fib for loop"];
   }
 
   fibonnaci = (number) => {
@@ -14,6 +14,14 @@ class Fibonnaci {
       v.push(fnth);
       f1 = f2;
       f2 = fnth;
+    }
+  };
+
+  fib_recur = (num) => {
+    // return num;
+    let arr = [0, 1];
+    for (let i = 2; i < num + 1; i++) {
+      arr.push(arr[i - 2] + arr[i - 1]);
     }
   };
 }

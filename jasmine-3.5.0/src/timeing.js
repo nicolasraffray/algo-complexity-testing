@@ -49,6 +49,7 @@ class Timing {
         this._runFunction(i, input, theFunction, dataStore);
       }
     } else {
+      console.log(theFunction);
       for (let i = 0; i <= endPoint; i += step) {
         this._runFunction(i, i, theFunction, dataStore);
       }
