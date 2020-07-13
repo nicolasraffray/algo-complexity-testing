@@ -31,6 +31,10 @@ class Timing {
   };
 
   _runFunction = (inputLength, input, theFunction, dataStore) => {
+    if (this.name === "Sort") {
+      input = this._shuffle(input);
+    }
+
     let start = performance.now();
     theFunction(input);
     let end = performance.now();
@@ -45,11 +49,10 @@ class Timing {
     if (this.name !== "fibonacci") {
       for (let i = 0; i <= endPoint; i += step) {
         var input = [...Array(i).keys()];
-        input = this._shuffle(input);
+        // input = this._shuffle(input);
         this._runFunction(i, input, theFunction, dataStore);
       }
     } else {
-      console.log(theFunction);
       for (let i = 0; i <= endPoint; i += step) {
         this._runFunction(i, i, theFunction, dataStore);
       }
@@ -57,11 +60,9 @@ class Timing {
   };
 
   _shuffle = (array) => {
-    if (this.function === sort) {
-      for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
   };
