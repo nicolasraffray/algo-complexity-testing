@@ -9,7 +9,6 @@ class Reverse {
   };
 
   myReverse = (input) => {
-    console.log(input);
     var result = [];
     while (input.length > 0) {
       result.push(input.pop());

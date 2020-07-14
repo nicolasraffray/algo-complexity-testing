@@ -1,7 +1,13 @@
 class Sort {
   constructor() {
     this.timing = new Timing(
-      [this.sort, this.quickSort, this.mergeSort, this.insertionSort],
+      [
+        this.sort,
+        this.quickSort,
+        this.mergeSort,
+        this.insertionSort,
+        this.selectionSort,
+      ],
       "Sort"
     );
     this.functionNames = [
@@ -9,6 +15,7 @@ class Sort {
       "QuickSort",
       "MergeSort",
       "InsertionSort",
+      "SelectionSort",
     ];
   }
 
@@ -67,5 +74,16 @@ class Sort {
       input[pointer + 1] = check;
     }
     return input;
+  };
+
+  selectionSort = (input) => {
+    for (let i = 0; i < input.length; i++) {
+      let value = input[i];
+      for (let subIndex = i + 1; subIndex < input.length; subIndex++) {
+        if (input[subIndex] < value) {
+          [input[subIndex], input[i]] = [input[i], input[subIndex]];
+        }
+      }
+    }
   };
 }
