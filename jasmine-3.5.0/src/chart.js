@@ -66,7 +66,7 @@ class MakeChart {
   generateDataSets = () => {
     let data = this.generateData();
     let datasets = [];
-    let colours = ["#0e9aa7", "#fe8a71"];
+    let colours = ["#0e9aa7", "#fe8a71", "#57d979"];
     for (let val in data) {
       datasets.push({
         label: this.functions[this.chartName].functionNames[val],

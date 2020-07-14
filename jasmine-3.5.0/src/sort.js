@@ -66,6 +66,6 @@ class Sort {
       }
       input[pointer + 1] = check;
     }
-    console.log(input);
+    return input;
   };
 }
