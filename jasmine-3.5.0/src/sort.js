@@ -1,14 +1,14 @@
 class Sort {
   constructor() {
     this.timing = new Timing(
-      [this.sort, this.quickSort, this.mergeSort, this.selectionSort],
+      [this.sort, this.quickSort, this.mergeSort, this.insertionSort],
       "Sort"
     );
     this.functionNames = [
       "JavaScript Sort",
       "QuickSort",
       "MergeSort",
-      "SelectionSort",
+      "InsertionSort",
     ];
   }
 
@@ -55,7 +55,7 @@ class Sort {
     return merge(this.mergeSort(left), this.mergeSort(right));
   };
 
-  selectionSort = (input) => {
+  insertionSort = (input) => {
     for (let i = 0; i < input.length; i++) {
       var check = input[i];
 
