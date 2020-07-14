@@ -5,7 +5,6 @@ class Reverse {
   }
 
   _reverse = (input) => {
-    console.log(input);
     return input.reverse();
   };
 
