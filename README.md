@@ -1,10 +1,10 @@
-# Algorithmic Time Complexity
+<center><h1> Algorithmic Time Complexity </h1></center>
 
 This is a repo that looks at the algorithmic time complexity of different functions. In the jasmine-3.5.0/src you will find my functions which are compared against the standard JavaScript built in methods.
 
 #
 
-## How to Run
+<center><h2> How to Run </h2></center>
 
 #
 
@@ -20,7 +20,7 @@ $ open index.html
 
 #
 
-## The Algorithms
+<center><h2> The Algorithms </h2></center>
 
 All of the algorithm classes have a timing class instance as part of their constructor. They are then instantiated in make chart (the chart.js file). The make chart is called in generateChart.js where the generate method is called on each chart instance to relate it to its respective canvas.
 
@@ -42,3 +42,13 @@ The for loop requires more reading of array elements whereas the while just uses
 ### Reverse
 
 My reverse method pops element from end of old array and inserts it to end of new array. It is timed along with the javascript built in reverse method.
+
+#
+
+## Examples of some of the Charts:
+
+NB: My computer isn't very good so the graphs will likely have more spikes
+
+| <h2>Sort</h2>                                | <h2>Reverse</h2>                             | <h2>Shuffle</h2>                             |
+| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| ![image](./jasmine-3.5.0/images/sorting.png) | ![image](./jasmine-3.5.0/images/reverse.png) | ![image](./jasmine-3.5.0/images/shuffle.png) |
