@@ -32,10 +32,13 @@ There is no built in shuffle method for javascript so the Fisher-Yates shuffle i
 
 ### Sorting
 
-The Fisher-Yates shuffle is used for shuffling an ordered array
+The Fisher-Yates shuffle is used for shuffling an ordered array. The functions that are being timed are:
+Selection, Merge, Quick and Inserstion Sort.
 
 ### Fibonnaci
 
 The for loop requires more reading of array elements whereas the while just uses variable assignment and reassignment
 
-###
+### Reverse
+
+My reverse method pops element from end of old array and inserts it to end of new array. It is timed along with the javascript built in reverse method.
