@@ -49,6 +49,6 @@ My reverse method pops element from end of old array and inserts it to end of ne
 
 NB: My computer isn't very good so the graphs will likely have more spikes
 
-| <h2>Sort</h2>                                | <h2>Reverse</h2>                             | <h2>Shuffle</h2>                             |
-| -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+|                <h2>Sort</h2>                 |               <h2>Reverse</h2>               |               <h2>Shuffle</h2>               |
+| :------------------------------------------: | :------------------------------------------: | :------------------------------------------: |
 | ![image](./jasmine-3.5.0/images/sorting.png) | ![image](./jasmine-3.5.0/images/reverse.png) | ![image](./jasmine-3.5.0/images/shuffle.png) |
