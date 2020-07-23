@@ -9,7 +9,7 @@ This is a repo that looks at the algorithmic time complexity of different functi
 #
 
 1. download or clone this repo.
-2. Enter whats
+2. Enter whats below into your terminal
 
 ```bash
 $ cd where_file_was_downloaded/jasmine-3.5.0/
