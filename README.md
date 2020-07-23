@@ -22,6 +22,8 @@ $ open index.html
 
 ## The Algorithms
 
+All of the algorithm classes have a timing class instance as part of their constructor. They are then instantiated in make chart (the chart.js file). The make chart is called in generateChart.js where the generate method is called on each chart instance to relate it to its respective canvas.
+
 #
 
 ### Shuffle
@@ -31,3 +33,9 @@ There is no built in shuffle method for javascript so the Fisher-Yates shuffle i
 ### Sorting
 
 The Fisher-Yates shuffle is used for shuffling an ordered array
+
+### Fibonnaci
+
+The for loop requires more reading of array elements whereas the while just uses variable assignment and reassignment
+
+###
